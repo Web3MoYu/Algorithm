@@ -2,7 +2,7 @@ package org.lsh.alg.sort;
 
 import java.util.Arrays;
 
-public class Code04_MergeSort {
+public class C04_MergeSort {
     public static void main(String[] args) {
         int[] arr = new int[]{14, 44, 22, 61, 42, -3, -30, 12, 6, 32, 98, 21, 23, 231, 5, 76, 33, 87, 43};
         mergeSort(arr, 0, arr.length - 1);

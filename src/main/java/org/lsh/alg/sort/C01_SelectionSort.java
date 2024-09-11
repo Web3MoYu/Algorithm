@@ -5,7 +5,7 @@ import org.lsh.alg.util.AlgUtils;
 
 import java.util.Arrays;
 
-public class Code01_SelectionSort {
+public class C01_SelectionSort {
 
     public static void main(String[] args) {
         int maxSize = 100;
