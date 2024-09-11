@@ -8,8 +8,8 @@ import java.util.Arrays;
 public class Code01_SelectionSort {
 
     public static void main(String[] args) {
-        int maxSize = 10000;
-        int maxValue = 100000;
+        int maxSize = 100;
+        int maxValue = 10000;
         for (int i = 0; i < 100; i++) {
             int[] arr1 = AlgUtils.generateRandomArray(maxSize, maxValue);
             int[] arr2 = arr1.clone();
