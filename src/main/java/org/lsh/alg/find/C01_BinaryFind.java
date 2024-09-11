@@ -1,6 +1,6 @@
 package org.lsh.alg.find;
 
-public class BinaryFind {
+public class C01_BinaryFind {
 
     public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

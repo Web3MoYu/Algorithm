@@ -7,11 +7,11 @@ package org.lsh.alg.math;
  * 满足交换律和结合律
  * 所以交换两个数的值可以写成 a = a^b b = a^b a = a^b
  */
-public class XOR {
+public class C01_XOR {
 
     /**
      * 有一堆数，有两个是奇数次，其他是偶数次，找到奇数次的数
-     * @param arr
+     *
      */
     public static void xor(int[] arr) {
         int xor = 0, xor1 = 0;
