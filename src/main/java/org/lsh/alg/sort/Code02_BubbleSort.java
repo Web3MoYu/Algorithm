@@ -1,29 +1,26 @@
 package org.lsh.alg.sort;
 
-
 import org.lsh.alg.util.AlgUtils;
 
 import java.util.Arrays;
 
-public class Code01_SelectionSort {
-
+public class Code02_BubbleSort {
     public static void main(String[] args) {
         int[] arr = new int[]{14, 44, 22, 61, 42, 3, 30, 12, 6, 32, 98, 21, 23, 231, 5, 76, 33, 87, 43};
-        selectionSort(arr);
+        bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
-    public static void selectionSort(int[] arr) {
+    public static void bubbleSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
-        for (int i = 0; i < arr.length - 1; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                minIndex = arr[j] < arr[minIndex] ? j : minIndex;
+        for (int i = arr.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    AlgUtils.swap(arr, j, j + 1);
+                }
             }
-            AlgUtils.swap(arr, i, minIndex);
         }
     }
-
 }
