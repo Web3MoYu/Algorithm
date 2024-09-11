@@ -8,9 +8,20 @@ import java.util.Arrays;
 public class Code01_SelectionSort {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{14, 44, 22, 61, 42, 3, 30, 12, 6, 32, 98, 21, 23, 231, 5, 76, 33, 87, 43};
-        selectionSort(arr);
-        System.out.println(Arrays.toString(arr));
+        int maxSize = 10000;
+        int maxValue = 100000;
+        for (int i = 0; i < 100; i++) {
+            int[] arr1 = AlgUtils.generateRandomArray(maxSize, maxValue);
+            int[] arr2 = arr1.clone();
+            Arrays.sort(arr2);
+            selectionSort(arr1);
+            if (!AlgUtils.compare(arr1, arr2)) {
+                System.out.println(Arrays.toString(arr1));
+                System.out.println(Arrays.toString(arr2));
+                break;
+            }
+        }
+
     }
 
     public static void selectionSort(int[] arr) {
