@@ -9,24 +9,34 @@ public class Node<T> {
 
     public Node(T value) {
         this.value = value;
+        this.next = null;
     }
 
-    public Node<T> add(T value) {
+    public void addFirst(T value) {
         Node<T> node = new Node<>(value);
         node.next = this.next;
         this.next = node;
-        return this;
     }
 
-    public Node<T> reverse(Node<T> head) {
-        Node<T> cur = head.next;
-        Node<T> pre = null;
+    public void addLast(T value) {
+        Node<T> node = new Node<>(value);
+        Node<T> cur = this.next;
+        if (cur == null) {
+            this.next = node;
+            return;
+        }
+        while (cur.next != null) {
+            cur = cur.next;
+        }
+        cur.next = node;
+    }
 
-        // 3->2->1
-        // 2->1
-        // 3->null
+    public Node<T> reverse() {
+        Node<T> cur = this.next;
+        Node<T> pre = null;
+        Node<T> t = null;
         while (cur != null) {
-            Node<T> t = cur.next;
+            t = cur.next;
             cur.next = pre;
             pre = cur;
             cur = t;
