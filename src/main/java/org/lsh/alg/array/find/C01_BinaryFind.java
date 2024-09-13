@@ -1,4 +1,5 @@
-package org.lsh.alg.find;
+package org.lsh.alg.array.find;
+
 
 public class C01_BinaryFind {
 

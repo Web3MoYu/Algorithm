@@ -1,4 +1,4 @@
-package org.lsh.alg.sort;
+package org.lsh.alg.array.sort;
 
 import org.lsh.alg.util.AlgUtils;
 

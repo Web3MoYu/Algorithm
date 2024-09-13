@@ -1,11 +1,11 @@
-package org.lsh.alg.sort;
+package org.lsh.alg.array.sort;
 
 import java.util.Arrays;
 
 public class C07_RadixSort {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{3, 5, 6, 3, 4, 5, 2, 6, 9, 0};
+        int[] arr = new int[]{131, 254, 16, 53, 42, 51, 21, 46, 19, 0};
         radixSort(arr);
         System.out.println(Arrays.toString(arr));
     }
