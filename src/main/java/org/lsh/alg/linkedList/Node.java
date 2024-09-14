@@ -1,28 +1,27 @@
 package org.lsh.alg.linkedList;
 
-public class Node<T> {
-    T value;
-    Node<T> next;
-    Node<T> random;
-
+public class Node {
+    Integer value;
+    Node next;
+    Node random;
 
     public Node() {
     }
 
-    public Node(T value) {
+    public Node(Integer value) {
         this.value = value;
         this.next = null;
     }
 
-    public void addFirst(T value) {
-        Node<T> node = new Node<>(value);
+    public void addFirst(Integer value) {
+        Node node = new Node(value);
         node.next = this.next;
         this.next = node;
     }
 
-    public void addLast(T value) {
-        Node<T> node = new Node<>(value);
-        Node<T> cur = this.next;
+    public void addLast(Integer value) {
+        Node node = new Node(value);
+        Node cur = this.next;
         if (cur == null) {
             this.next = node;
             return;
@@ -33,24 +32,24 @@ public class Node<T> {
         cur.next = node;
     }
 
-    public Node<T> reverse() {
-        Node<T> cur = this.next;
-        Node<T> pre = null;
-        Node<T> t = null;
+    public Node reverse() {
+        Node cur = this.next;
+        Node pre = null;
+        Node t = null;
         while (cur != null) {
             t = cur.next;
             cur.next = pre;
             pre = cur;
             cur = t;
         }
-        Node<T> res = new Node<>();
+        Node res = new Node();
         res.next = pre;
         return res;
     }
 
     @Override
     public String toString() {
-        Node<T> node = this.next;
+        Node node = this.next;
         StringBuilder str = new StringBuilder();
         while (node != null) {
             if (node.next != null) {
