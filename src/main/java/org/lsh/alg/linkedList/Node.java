@@ -3,6 +3,8 @@ package org.lsh.alg.linkedList;
 public class Node<T> {
     T value;
     Node<T> next;
+    Node<T> random;
+
 
     public Node() {
     }

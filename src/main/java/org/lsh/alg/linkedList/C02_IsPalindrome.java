@@ -64,7 +64,6 @@ public class C02_IsPalindrome {
         slow.next = null;
         // 逆序
         slow = null;
-        fast = null;
         while (cur != null) {
             fast = cur.next;
             cur.next = slow;
