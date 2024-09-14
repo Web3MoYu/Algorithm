@@ -11,7 +11,7 @@ public class C05_CycleNode {
         node.addLast(3);
         node.addLast(4);
         System.out.println(detectCycle1(node));
-        System.out.println(detectCycle2(node));
+        System.out.println(bothLoop(node, node));
     }
 
     // HashSet
