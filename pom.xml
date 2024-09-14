@@ -20,5 +20,10 @@
       <artifactId>junit-jupiter-api</artifactId>
       <version>5.9.3</version>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.32</version>
+    </dependency>
   </dependencies>
 </project>
