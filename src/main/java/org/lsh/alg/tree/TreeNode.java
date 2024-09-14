@@ -25,12 +25,12 @@ public class TreeNode {
         TreeNode node4 = new TreeNode(5);
         TreeNode node5 = new TreeNode(6);
         TreeNode node6 = new TreeNode(7);
+        root.setLeft(node1);
+        root.setRight(node2);
         node1.setLeft(node3);
         node1.setRight(node4);
         node2.setLeft(node5);
         node2.setRight(node6);
-        root.setLeft(node1);
-        root.setRight(node2);
         return root;
     }
 }
