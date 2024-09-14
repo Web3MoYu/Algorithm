@@ -1,5 +1,7 @@
 package org.lsh.alg.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class C01_Traversal {
@@ -17,6 +19,8 @@ public class C01_Traversal {
         posOrderRecur(root);
         System.out.println();
         posOrderStack(root);
+        System.out.println();
+        widthTraversal(root);
     }
 
     public static void preOrderRecur(TreeNode root) {
@@ -93,6 +97,21 @@ public class C01_Traversal {
         }
         while (!help.isEmpty()) {
             System.out.print(help.pop().val + " ");
+        }
+    }
+
+    public static void widthTraversal(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode poll = queue.poll();
+            System.out.print(poll.val + " ");
+            if (poll.left != null) {
+                queue.add(poll.left);
+            }
+            if (poll.right != null) {
+                queue.add(poll.right);
+            }
         }
     }
 }
