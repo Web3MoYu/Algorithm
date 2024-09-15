@@ -3,7 +3,7 @@ package org.lsh.alg.tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class C03_IsCBT {
+public class C04_IsCBT {
     public static void main(String[] args) {
         TreeNode root = TreeNode.init();
         System.out.println(isCBT(root));
