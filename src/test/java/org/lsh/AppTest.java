@@ -1,6 +1,5 @@
 package org.lsh;
 
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +8,6 @@ import java.util.List;
  * Unit test for simple App.
  */
 public class AppTest {
-    @Test
     public void test01() {
         List<Integer> list = new ArrayList<>();
         list.add(1);

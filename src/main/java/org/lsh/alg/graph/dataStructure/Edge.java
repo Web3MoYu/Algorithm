@@ -1,4 +1,4 @@
-package org.lsh.alg.graph;
+package org.lsh.alg.graph.dataStructure;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

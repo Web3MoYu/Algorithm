@@ -1,4 +1,4 @@
-package org.lsh.alg.graph;
+package org.lsh.alg.graph.dataStructure;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,19 +7,18 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Node<T> {
-    private T value;
+    public T value;
     // 入度
-    private int in;
+    public int in;
     // 出度
-    private int out;
+    public int out;
     // 从该点出发直接领居
     public List<Node<T>> next;
     // 从该点出发的边
-    private List<Edge<T>> edges;
+    public List<Edge<T>> edges;
 
     public Node(T value) {
         this.value = value;

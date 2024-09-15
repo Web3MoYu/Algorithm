@@ -1,4 +1,4 @@
-package org.lsh.alg.graph;
+package org.lsh.alg.graph.dataStructure;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +12,6 @@ import java.util.HashSet;
 @NoArgsConstructor
 public class Graph<T> {
     // 编号和实际结构
-    private HashMap<Integer, Node<T>> nodes;
-    private HashSet<Edge<T>> edges;
+    public HashMap<Integer, Node<T>> nodes;
+    public HashSet<Edge<T>> edges;
 }
