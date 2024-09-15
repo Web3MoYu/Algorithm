@@ -27,7 +27,7 @@ public class GraphUtils {
             Edge<Integer> newEdge = new Edge<>(weight, fromNode, toNode);
             // 修改数据
             fromNode.edges.add(newEdge);
-            fromNode.next.add(toNode);
+            fromNode.nexts.add(toNode);
             fromNode.out++;
 
             toNode.in++;
