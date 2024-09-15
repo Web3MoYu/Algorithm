@@ -23,7 +23,7 @@ public class C02_DFS {
             Node<Integer> cur = stack.pop();
             for (Node<Integer> next : cur.nexts) {
                 // 发现有一个没走过，就先把之前的cur压回栈，在压next，然后set标记next
-                // 相当于逮着一条路走到黑，知道一条路走完，就会回到cur，继续延申cur的其他路
+                // 相当于逮着一条路走到黑，直到一条路走完，就会回到cur，继续延申cur的其他路
                 if (!set.contains(next)) {
                     stack.push(cur);
                     stack.push(next);
