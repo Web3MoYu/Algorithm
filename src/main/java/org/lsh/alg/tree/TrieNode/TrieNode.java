@@ -3,7 +3,7 @@ package org.lsh.alg.tree.TrieNode;
 public class TrieNode {
     public int pass;
     public int end;
-    public TrieNode[] nexts;
+    public TrieNode[] nexts; // HashMap<Char, Node>
 
     public TrieNode() {
         this.pass = 0;
