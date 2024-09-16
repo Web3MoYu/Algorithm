@@ -1,4 +1,4 @@
-package org.lsh.alg.tree;
+package org.lsh.alg.tree.binaryTree;
 
 public class C03_IsBalancedTree {
 

@@ -1,4 +1,4 @@
-package org.lsh.alg.tree;
+package org.lsh.alg.tree.binaryTree;
 
 // 最大公共祖先
 public class C06_LCA {

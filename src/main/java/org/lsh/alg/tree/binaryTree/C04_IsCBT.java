@@ -1,4 +1,4 @@
-package org.lsh.alg.tree;
+package org.lsh.alg.tree.binaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
