@@ -23,12 +23,12 @@ public class C02_IsPalindrome {
         Stack<Integer> stack = new Stack<>();
         ListNode cur = head.next;
         while (cur != null) {
-            stack.push(cur.value);
+            stack.push(cur.val);
             cur = cur.next;
         }
         cur = head.next;
         while (cur != null) {
-            if (!Objects.equals(cur.value, stack.pop())) {
+            if (!Objects.equals(cur.val, stack.pop())) {
                 return false;
             }
             cur = cur.next;
@@ -75,7 +75,7 @@ public class C02_IsPalindrome {
         cur = head.next;
         boolean flag = true;
         while (cur != null && slow != null) {
-            if (!Objects.equals(cur.value, slow.value)) {
+            if (!Objects.equals(cur.val, slow.val)) {
                 flag = false;
                 break;
             }

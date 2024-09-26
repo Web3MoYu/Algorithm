@@ -1,7 +1,7 @@
 package org.lsh.alg.linkedList;
 
 public class ListNode {
-    Integer value;
+    Integer val;
     ListNode next;
     ListNode random;
 
@@ -9,7 +9,7 @@ public class ListNode {
     }
 
     public ListNode(Integer value) {
-        this.value = value;
+        this.val = value;
         this.next = null;
     }
 
@@ -53,9 +53,9 @@ public class ListNode {
         StringBuilder str = new StringBuilder();
         while (listNode != null) {
             if (listNode.next != null) {
-                str.append(listNode.value).append("->");
+                str.append(listNode.val).append("->");
             } else {
-                str.append(listNode.value);
+                str.append(listNode.val);
             }
             listNode = listNode.next;
         }

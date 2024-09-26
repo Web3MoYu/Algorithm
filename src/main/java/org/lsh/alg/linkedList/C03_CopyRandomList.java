@@ -25,7 +25,7 @@ public class C03_CopyRandomList {
         cur = head;
         while (cur != null) {
             ListNode oldListNode = map.get(cur);
-            oldListNode.value = cur.value;
+            oldListNode.val = cur.val;
             oldListNode.next = map.get(cur.next);
             oldListNode.random = map.get(cur.random);
             cur = cur.next;
@@ -42,7 +42,7 @@ public class C03_CopyRandomList {
         ListNode cur = head;
         // 构建映射关系
         while (cur != null) {
-            ListNode newListNode = new ListNode(cur.value);
+            ListNode newListNode = new ListNode(cur.val);
             newListNode.next = cur.next;
             cur.next = newListNode;
             cur = cur.next.next;

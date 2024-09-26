@@ -33,14 +33,14 @@ public class C04_Partition {
         while (cur != null) {
             next = cur.next;
             cur.next = null;
-            if (cur.value < num) {
+            if (cur.val < num) {
                 if (lh == null) {
                     lh = cur;
                 } else {
                     lt.next = cur;
                 }
                 lt = cur;
-            } else if (cur.value == num) {
+            } else if (cur.val == num) {
                 if (eh == null) {
                     eh = cur;
                 } else {
@@ -116,9 +116,9 @@ public class C04_Partition {
         int more = arr.length;
         int i = 0;
         while (i < more) {
-            if (arr[i].value < num) {
+            if (arr[i].val < num) {
                 swap(arr, ++less, i++);
-            } else if (arr[i].value > num) {
+            } else if (arr[i].val > num) {
                 swap(arr, i, --more);
             } else {
                 i++;
