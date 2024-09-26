@@ -5,64 +5,64 @@ import java.util.HashMap;
 public class C03_CopyRandomList {
 
     public static void main(String[] args) {
-        Node node = new Node();
-        node.addLast(1);
-        node.addLast(2);
-        node.addLast(3);
-        node.addLast(4);
-        System.out.println(node);
-        System.out.println(copyRandomList2(node));
+        ListNode listNode = new ListNode();
+        listNode.addLast(1);
+        listNode.addLast(2);
+        listNode.addLast(3);
+        listNode.addLast(4);
+        System.out.println(listNode);
+        System.out.println(copyRandomList2(listNode));
     }
 
-    private static Node copyRandomList1(Node head) {
+    private static ListNode copyRandomList1(ListNode head) {
 
-        Node cur = head;
-        HashMap<Node, Node> map = new HashMap<>();
+        ListNode cur = head;
+        HashMap<ListNode, ListNode> map = new HashMap<>();
         while (cur != null) {
-            map.put(cur, new Node());
+            map.put(cur, new ListNode());
             cur = cur.next;
         }
         cur = head;
         while (cur != null) {
-            Node oldNode = map.get(cur);
-            oldNode.value = cur.value;
-            oldNode.next = map.get(cur.next);
-            oldNode.random = map.get(cur.random);
+            ListNode oldListNode = map.get(cur);
+            oldListNode.value = cur.value;
+            oldListNode.next = map.get(cur.next);
+            oldListNode.random = map.get(cur.random);
             cur = cur.next;
         }
 
         return map.get(head);
     }
 
-    private static Node copyRandomList2(Node head) {
+    private static ListNode copyRandomList2(ListNode head) {
         if (head == null){
             return null;
         }
 
-        Node cur = head;
+        ListNode cur = head;
         // 构建映射关系
         while (cur != null) {
-            Node newNode = new Node(cur.value);
-            newNode.next = cur.next;
-            cur.next = newNode;
+            ListNode newListNode = new ListNode(cur.value);
+            newListNode.next = cur.next;
+            cur.next = newListNode;
             cur = cur.next.next;
         }
         // 构建random关系
         // 1->1'->2->2'
         cur = head;
         while (cur != null) {
-            Node newNode = cur.next;
-            newNode.random = cur.random == null ? null : cur.random.next;
+            ListNode newListNode = cur.next;
+            newListNode.random = cur.random == null ? null : cur.random.next;
             cur = cur.next.next;
         }
 
         // 恢复
         cur = head;
-        Node ans = cur.next;
+        ListNode ans = cur.next;
         while (cur != null && cur.next != null) {
-            Node newNode = cur.next;
+            ListNode newListNode = cur.next;
             cur.next = cur.next.next;
-            newNode.next = newNode.next == null ? null : newNode.next.next;
+            newListNode.next = newListNode.next == null ? null : newListNode.next.next;
             cur = cur.next;
         }
         return ans;

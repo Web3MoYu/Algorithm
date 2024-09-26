@@ -10,18 +10,18 @@ import java.util.Stack;
 public class C02_IsPalindrome {
 
     public static void main(String[] args) {
-        Node node = new Node();
-        System.out.println(isPalindrome1(node) == isPalindrome2(node));
-        System.out.println(node);
+        ListNode listNode = new ListNode();
+        System.out.println(isPalindrome1(listNode) == isPalindrome2(listNode));
+        System.out.println(listNode);
     }
 
     // 笔试写法
-    private static boolean isPalindrome1(Node head) {
+    private static boolean isPalindrome1(ListNode head) {
         if (head == null || head.next == null) {
             return false;
         }
         Stack<Integer> stack = new Stack<>();
-        Node cur = head.next;
+        ListNode cur = head.next;
         while (cur != null) {
             stack.push(cur.value);
             cur = cur.next;
@@ -37,7 +37,7 @@ public class C02_IsPalindrome {
     }
 
     // 面试写法
-    private static boolean isPalindrome2(Node head) {
+    private static boolean isPalindrome2(ListNode head) {
         if (head == null || head.next == null) {
             return false;
         }
@@ -51,14 +51,14 @@ public class C02_IsPalindrome {
          * 1->1
          * 1->2->2->1
          */
-        Node cur = head.next;
-        Node slow = head.next;
-        Node fast = head.next.next;
+        ListNode cur = head.next;
+        ListNode slow = head.next;
+        ListNode fast = head.next.next;
         while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
-        Node firstTail = slow; // 存储中点的前一个
+        ListNode firstTail = slow; // 存储中点的前一个
         // 结束循环，此时fast来到尾部,slow来到中点的前一个
         cur = slow.next;
         slow.next = null;

@@ -5,19 +5,19 @@ import java.util.HashSet;
 public class C05_CycleNode {
 
     public static void main(String[] args) {
-        Node node = new Node();
-        node.addLast(1);
-        node.addLast(2);
-        node.addLast(3);
-        node.addLast(4);
-        System.out.println(detectCycle1(node));
-        System.out.println(bothLoop(node, node));
+        ListNode listNode = new ListNode();
+        listNode.addLast(1);
+        listNode.addLast(2);
+        listNode.addLast(3);
+        listNode.addLast(4);
+        System.out.println(detectCycle1(listNode));
+        System.out.println(bothLoop(listNode, listNode));
     }
 
     // HashSet
-    public static Node detectCycle1(Node head) {
-        Node cur = head.next;
-        HashSet<Node> set = new HashSet<>();
+    public static ListNode detectCycle1(ListNode head) {
+        ListNode cur = head.next;
+        HashSet<ListNode> set = new HashSet<>();
         while (cur != null) {
             if (set.contains(cur)) {
                 return cur;
@@ -29,12 +29,12 @@ public class C05_CycleNode {
     }
 
     // Slow Fast
-    public static Node getLoop(Node head) {
+    public static ListNode getLoop(ListNode head) {
         if (head == null || head.next == null || head.next.next == null) {
             return null;
         }
-        Node slow = head.next;
-        Node fast = head.next.next;
+        ListNode slow = head.next;
+        ListNode fast = head.next.next;
 
         while (slow != fast) {
             if (fast.next == null || fast.next.next == null) {
@@ -51,11 +51,11 @@ public class C05_CycleNode {
         return fast;
     }
 
-    public static Node bothLoop(Node head1, Node head2) {
+    public static ListNode bothLoop(ListNode head1, ListNode head2) {
 
         // 拿到是否有环
-        Node loop1 = getLoop(head1);
-        Node loop2 = getLoop(head2);
+        ListNode loop1 = getLoop(head1);
+        ListNode loop2 = getLoop(head2);
         // 如果都没有环，就是两个单链表的相交问题
         if (loop1 == null && loop2 == null) {
             return getIntersectionNode(head1, head2, null);
@@ -67,7 +67,7 @@ public class C05_CycleNode {
                 return getIntersectionNode(head1, head2, loop2);
             } else {
                 // 如果入环节点不同，看loop1在转回自己之前能不能遇到loop2，如果可以就有，没有就为null
-                Node cur = loop1.next;
+                ListNode cur = loop1.next;
                 while (cur != loop1) {
                     if (cur == loop2) {
                         return loop2;
@@ -80,9 +80,9 @@ public class C05_CycleNode {
         return null;
     }
 
-    public static Node getIntersectionNode(Node head1, Node head2, Node target) {
-        Node n1 = head1;
-        Node n2 = head2;
+    public static ListNode getIntersectionNode(ListNode head1, ListNode head2, ListNode target) {
+        ListNode n1 = head1;
+        ListNode n2 = head2;
         int count = 0;
 
         while (n1 != target) {

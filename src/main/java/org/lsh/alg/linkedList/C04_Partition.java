@@ -3,33 +3,33 @@ package org.lsh.alg.linkedList;
 public class C04_Partition {
 
     public static void main(String[] args) {
-        Node node = new Node();
-        node.addLast(1);
-        node.addLast(2);
-        node.addLast(5);
-        node.addLast(5);
-        node.addLast(4);
-        node.addLast(5);
-        node.addLast(6);
-        System.out.println(partition1(node, 5));
-        System.out.println(partition2(node, 5));
+        ListNode listNode = new ListNode();
+        listNode.addLast(1);
+        listNode.addLast(2);
+        listNode.addLast(5);
+        listNode.addLast(5);
+        listNode.addLast(4);
+        listNode.addLast(5);
+        listNode.addLast(6);
+        System.out.println(partition1(listNode, 5));
+        System.out.println(partition2(listNode, 5));
     }
 
 
-    private static Node partition2(Node head, int num) {
+    private static ListNode partition2(ListNode head, int num) {
 
         if (head == null) {
             return null;
         }
 
         // 创建三个区间的头尾
-        Node lh = null, lt = null;
-        Node eh = null, et = null;
-        Node bh = null, bt = null;
+        ListNode lh = null, lt = null;
+        ListNode eh = null, et = null;
+        ListNode bh = null, bt = null;
 
         // 遍历链表
-        Node cur = head.next;
-        Node next = null;
+        ListNode cur = head.next;
+        ListNode next = null;
         while (cur != null) {
             next = cur.next;
             cur.next = null;
@@ -79,14 +79,14 @@ public class C04_Partition {
         return head;
     }
 
-    private static Node partition1(Node head, int num) {
+    private static ListNode partition1(ListNode head, int num) {
 
         if (head == null) {
             return null;
         }
 
         // 获取长度
-        Node cur = head.next;
+        ListNode cur = head.next;
         int len = 0;
         while (cur != null) {
             len++;
@@ -94,7 +94,7 @@ public class C04_Partition {
         }
 
         // 构建Node[]
-        Node[] arr = new Node[len];
+        ListNode[] arr = new ListNode[len];
         cur = head.next;
         for (int i = 0; i < len && cur != null; i++, cur = cur.next) {
             arr[i] = cur;
@@ -102,7 +102,7 @@ public class C04_Partition {
 
         solve(arr, num);
         // 串起来
-        Node ans = arr[0];
+        ListNode ans = arr[0];
         for (int i = 1; i < arr.length; i++) {
             arr[i].next = null;
             ans.next = arr[i];
@@ -111,7 +111,7 @@ public class C04_Partition {
         return head;
     }
 
-    private static void solve(Node[] arr, int num) {
+    private static void solve(ListNode[] arr, int num) {
         int less = -1;
         int more = arr.length;
         int i = 0;
@@ -126,8 +126,8 @@ public class C04_Partition {
         }
     }
 
-    private static void swap(Node[] arr, int i, int j) {
-        Node t = arr[i];
+    private static void swap(ListNode[] arr, int i, int j) {
+        ListNode t = arr[i];
         arr[i] = arr[j];
         arr[j] = t;
     }
